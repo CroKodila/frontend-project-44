@@ -38,5 +38,4 @@ function isNonNumericAnswerCorrect(
   }
   return counter;
 }
-
 export { isNumericAnswerCorrect, isNonNumericAnswerCorrect };

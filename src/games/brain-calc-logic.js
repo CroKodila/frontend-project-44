@@ -26,7 +26,7 @@ function brainCalc() {
         "Question: " + number1 + " - " + number2 + " ",
       );
       correctAnswer = number1 - number2;
-    } else if (operationCode >= 3) {
+    } else{
       answer = readlineSync.question(
         "Question: " + number1 + " * " + number2 + " ",
       );
