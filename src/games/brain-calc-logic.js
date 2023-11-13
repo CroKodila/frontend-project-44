@@ -1,6 +1,6 @@
 import { name } from "../cli.js";
 import readlineSync from "readline-sync";
-import { isNumericAnswerCorrect } from "../index.js";
+import { isNumericAnswerCorrect, chooseSignAtCalcQuestion, correctAnswerAtCalc } from "../index.js";
 
 function brainCalc() {
   let counter = 0;
@@ -16,22 +16,8 @@ function brainCalc() {
     operationCode = Math.round(Math.random() * 3);
     number1 = Math.round(Math.random() * 10);
     number2 = Math.round(Math.random() * 10);
-    if (operationCode <= 1) {
-      answer = readlineSync.question(
-        "Question: " + number1 + " + " + number2 + " ",
-      );
-      correctAnswer = number1 + number2;
-    } else if (operationCode === 2) {
-      answer = readlineSync.question(
-        "Question: " + number1 + " - " + number2 + " ",
-      );
-      correctAnswer = number1 - number2;
-    } else{
-      answer = readlineSync.question(
-        "Question: " + number1 + " * " + number2 + " ",
-      );
-      correctAnswer = number1 * number2;
-    }
+    answer = readlineSync.question("Question: " + number1 + " " + chooseSignAtCalcQuestion(operationCode) + " " + number2 + " ");
+    correctAnswer = correctAnswerAtCalc(chooseSignAtCalcQuestion(operationCode), number1, number2);
     counter = isNumericAnswerCorrect(
       answer,
       counter,
