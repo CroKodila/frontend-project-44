@@ -1,4 +1,4 @@
-import { name } from "./cli.js";
+import { name } from "../cli.js";
 import readlineSync from "readline-sync";
 
 function brainEven() {
