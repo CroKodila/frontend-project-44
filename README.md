@@ -7,3 +7,4 @@
 <a href= "https://asciinema.org/a/NX4VbgLgW5PXiTaJyQKSrl2vM">Brain-even</a><br>
 <a href = "https://asciinema.org/a/iggmggAXTYGw9JvzBO5pro34o">Brain-calc</a><br>
 <a href = "https://asciinema.org/a/sRbFzUHRQYML2ziGLVrRwmFy3">Brain-gcd</a><br>
+<a href = "https://asciinema.org/a/6JDWq928rc7xaJ5s4ZAvueJxl">Brain-progression</a><br>
