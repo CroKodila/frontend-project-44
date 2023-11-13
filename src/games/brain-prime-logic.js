@@ -1,5 +1,6 @@
 import { name } from "../cli.js";
 import readlineSync from "readline-sync";
+import { isNonNumericAnswerCorrect } from "../index.js";
 
 function isPrime(num) {
   let c = 0;
@@ -14,6 +15,7 @@ function isPrime(num) {
     return "no";
   }
 }
+
 function brainPrime() {
   let counter = 0;
   let answer;
@@ -27,20 +29,12 @@ function brainPrime() {
     correctAnswer = isPrime(number);
     console.log("Question: " + number);
     answer = readlineSync.question("Your answer: ");
-    if (answer === correctAnswer) {
-      counter += 1;
-      console.log("Correct!");
-    } else {
-      console.log(
-        answer +
-          " is wrong answer ;(. Correct answer was " +
-          correctAnswer +
-          ". Let's try again, " +
-          characterName +
-          "!",
-      );
-      break;
-    }
+    counter = isNonNumericAnswerCorrect(
+      answer,
+      counter,
+      correctAnswer,
+      characterName,
+    );
     if (counter === 3) {
       console.log("Congratulations, " + characterName + "!");
       break;

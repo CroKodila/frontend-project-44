@@ -1,5 +1,6 @@
 import { name } from "../cli.js";
 import readlineSync from "readline-sync";
+import { isNumericAnswerCorrect } from "../index.js";
 
 function gcd_rec(a, b) {
   if (b) {
@@ -25,20 +26,12 @@ function brainGcd() {
       "Question: " + number1 + " & " + number2 + " ",
     );
     correctAnswer = gcd_rec(number1, number2);
-    if (Number(answer) === correctAnswer) {
-      counter += 1;
-      console.log("Correct!");
-    } else {
-      console.log(
-        answer +
-          " is wrong answer ;(. Correct answer was " +
-          correctAnswer +
-          ". Let's try again, " +
-          characterName +
-          "!",
-      );
-      break;
-    }
+    counter = isNumericAnswerCorrect(
+      answer,
+      counter,
+      correctAnswer,
+      characterName,
+    );
     if (counter === 3) {
       console.log("Congratulations, " + characterName + "!");
       break;

@@ -10,11 +10,18 @@
 <a href = "https://asciinema.org/a/6JDWq928rc7xaJ5s4ZAvueJxl">Brain-progression</a><br>
 <a href = "https://asciinema.org/a/v8KCPGoWFYSHQBuMhic505b2A">Brain-prime</a><br>
 
-# Welcome to my first JS project! 
+# Welcome to my first JS project!
+
 ### Here're 5 different console math games for brain training:
+
 ### Prime numbers (type 'brain-prime' into console)
+
 ### Finding GCD (type 'brain-gcd' into console)
+
 ### Even numbers (type 'brain-even' into console)
+
 ### Ariphmetical progression (type 'brain-progression' into console)
+
 ### Calculator (type 'brain-calc' into console)
+
 ## You have to have node.js installed on your computer!

@@ -1,6 +1,7 @@
 import { name } from "../cli.js";
 import readlineSync from "readline-sync";
 import process from "process";
+import { isNumericAnswerCorrect } from "../index.js";
 
 function brainProgression() {
   let counter = 0;
@@ -29,21 +30,12 @@ function brainProgression() {
       }
     }
     answer = readlineSync.question("\nYour answer: ");
-
-    if (Number(answer) === correctAnswer) {
-      counter += 1;
-      console.log("Correct!");
-    } else {
-      console.log(
-        answer +
-          " is wrong answer ;(. Correct answer was " +
-          correctAnswer +
-          ". Let's try again, " +
-          characterName +
-          "!",
-      );
-      break;
-    }
+    counter = isNumericAnswerCorrect(
+      answer,
+      counter,
+      correctAnswer,
+      characterName,
+    );
     if (counter === 3) {
       console.log("Congratulations, " + characterName + "!");
       break;
