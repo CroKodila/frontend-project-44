@@ -1,4 +1,4 @@
-import { name } from "/home/kostya/courses_p1/frontend-project-44/src/cli.js";
+import { name } from "./cli.js";
 import readlineSync from "readline-sync";
 
 function brainEven() {
