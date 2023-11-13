@@ -7,5 +7,4 @@ function hello() {
   return name;
 }
 
-
 export { hello as default };
