@@ -1,31 +1,35 @@
 import { name } from "./cli.js";
 import readlineSync from "readline-sync";
 
-function gcd_rec(a, b) {
-  if (b) {
-    return gcd_rec(b, a % b);
-  } else {
-    return Math.abs(a);
-  }
+function isPrime(num){
+    let c = 0;
+    for (let i = 2; i < num; i += 1) {
+        if (num % i === 0){
+          c +=1;
+        }
+        
+    }
+    if (c === 0){
+        return "yes";
+    }
+    else {
+        return "no";
+    }
 }
-
-function brainGcd() {
+function brainPrime() {
   let counter = 0;
   let answer;
-  let number1;
-  let number2;
+  let number;
   let characterName;
   characterName = name;
   let correctAnswer;
-  console.log("Find the greatest common divisor of given numbers.");
+  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   while (counter < 3) {
-    number1 = Math.round(Math.random() * 100) + 1;
-    number2 = Math.round(Math.random() * 100) + 1;
-    answer = readlineSync.question(
-      "Question: " + number1 + " & " + number2 + " ",
-    );
-    correctAnswer = gcd_rec(number1, number2);
-    if (Number(answer) === correctAnswer) {
+    number = Math.ceil(Math.random()*100);
+    correctAnswer = isPrime(number);
+    console.log("Question: " + number);
+    answer = readlineSync.question("Your answer: ");    
+    if (answer === correctAnswer) {
       counter += 1;
       console.log("Correct!");
     } else {
@@ -45,4 +49,4 @@ function brainGcd() {
     }
   }
 }
-export { brainGcd as default };
+export { brainPrime as default };
