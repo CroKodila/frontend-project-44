@@ -10,37 +10,41 @@ function brainCalc() {
   let characterName;
   characterName = name;
   let correctAnswer;
-  console.log('What is the result of the expression?');
+  console.log("What is the result of the expression?");
   while (counter < 3) {
-    operationCode = Math.round(Math.random()*3);
+    operationCode = Math.round(Math.random() * 3);
     number1 = Math.round(Math.random() * 10);
     number2 = Math.round(Math.random() * 10);
-      if(operationCode <= 1){
-        answer = readlineSync.question("Question: " + number1 + " + " + number2 + " ");
-        correctAnswer = number1 + number2;
-      }
-      else if (operationCode === 2){
-        answer = readlineSync.question("Question: " + number1 + " - " + number2 + " ");
-        correctAnswer = number1 - number2;
-      }
-      else if (operationCode >= 3){
-        answer = readlineSync.question("Question: " + number1 + " * " + number2 + " ");
-        correctAnswer = number1 * number2;
-      }    
+    if (operationCode <= 1) {
+      answer = readlineSync.question(
+        "Question: " + number1 + " + " + number2 + " ",
+      );
+      correctAnswer = number1 + number2;
+    } else if (operationCode === 2) {
+      answer = readlineSync.question(
+        "Question: " + number1 + " - " + number2 + " ",
+      );
+      correctAnswer = number1 - number2;
+    } else if (operationCode >= 3) {
+      answer = readlineSync.question(
+        "Question: " + number1 + " * " + number2 + " ",
+      );
+      correctAnswer = number1 * number2;
+    }
 
     if (Number(answer) === correctAnswer) {
-        counter += 1;
-        console.log("Correct!");
+      counter += 1;
+      console.log("Correct!");
     } else {
-        console.log(
-            answer +
-              " is wrong answer ;(. Correct answer was " +
-              correctAnswer +
-              ". Let's try again, " +
-              characterName +
-              "!",
-          );
-          break;
+      console.log(
+        answer +
+          " is wrong answer ;(. Correct answer was " +
+          correctAnswer +
+          ". Let's try again, " +
+          characterName +
+          "!",
+      );
+      break;
     }
     if (counter === 3) {
       console.log("Congratulations, " + characterName + "!");
