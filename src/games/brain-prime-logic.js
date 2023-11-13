@@ -1,20 +1,18 @@
 import { name } from "../cli.js";
 import readlineSync from "readline-sync";
 
-function isPrime(num){
-    let c = 0;
-    for (let i = 2; i < num; i += 1) {
-        if (num % i === 0){
-          c +=1;
-        }
-        
+function isPrime(num) {
+  let c = 0;
+  for (let i = 2; i < num; i += 1) {
+    if (num % i === 0) {
+      c += 1;
     }
-    if (c === 0){
-        return "yes";
-    }
-    else {
-        return "no";
-    }
+  }
+  if (c === 0) {
+    return "yes";
+  } else {
+    return "no";
+  }
 }
 function brainPrime() {
   let counter = 0;
@@ -25,10 +23,10 @@ function brainPrime() {
   let correctAnswer;
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   while (counter < 3) {
-    number = Math.ceil(Math.random()*100);
+    number = Math.ceil(Math.random() * 100);
     correctAnswer = isPrime(number);
     console.log("Question: " + number);
-    answer = readlineSync.question("Your answer: ");    
+    answer = readlineSync.question("Your answer: ");
     if (answer === correctAnswer) {
       counter += 1;
       console.log("Correct!");
