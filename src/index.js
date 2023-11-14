@@ -1,6 +1,5 @@
 import readlineSync from "readline-sync";
 
-
 function isNumericAnswerCorrect(answer, counter, correctAnswer, characterName) {
   if (Number(answer) === correctAnswer) {
     counter += 1;
@@ -42,25 +41,28 @@ function isNonNumericAnswerCorrect(
   return counter;
 }
 
-function chooseSignAtCalcQuestion(operationCode){
-    if (operationCode <= 1) {
-        return "+";
-    } else if (operationCode === 2) {
-        return "-";
-    } else{
-        return "*";
-    }
+function chooseSignAtCalcQuestion(operationCode) {
+  if (operationCode <= 1) {
+    return "+";
+  } else if (operationCode === 2) {
+    return "-";
+  } else {
+    return "*";
+  }
 }
 
-function correctAnswerAtCalc(sign, number1, number2){
-    if(sign === "+"){
-        return number1 + number2;
-    }
-    else if(sign === "-"){
-        return number1 - number2;
-    }
-    else{
-        return number1 * number2;
-    }
+function correctAnswerAtCalc(sign, number1, number2) {
+  if (sign === "+") {
+    return number1 + number2;
+  } else if (sign === "-") {
+    return number1 - number2;
+  } else {
+    return number1 * number2;
+  }
 }
-export { isNumericAnswerCorrect, isNonNumericAnswerCorrect, chooseSignAtCalcQuestion, correctAnswerAtCalc };
+export {
+  isNumericAnswerCorrect,
+  isNonNumericAnswerCorrect,
+  chooseSignAtCalcQuestion,
+  correctAnswerAtCalc,
+};
