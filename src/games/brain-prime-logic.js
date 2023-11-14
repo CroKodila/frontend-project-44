@@ -18,11 +18,8 @@ function isPrime(num) {
 
 function brainPrime() {
   let counter = 0;
-  let answer;
-  let number;
-  let characterName;
+  let answer, number, characterName, correctAnswer;
   characterName = name;
-  let correctAnswer;
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   while (counter < 3) {
     number = Math.ceil(Math.random() * 100);

@@ -4,11 +4,8 @@ import { isNonNumericAnswerCorrect } from "../index.js";
 
 function brainEven() {
   let counter = 0;
-  let answer;
-  let number;
-  let characterName;
+  let answer, number, characterName, correctAnswer;
   characterName = name;
-  let correctAnswer;
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   while (counter < 3) {
     number = Math.round(Math.random() * 100);

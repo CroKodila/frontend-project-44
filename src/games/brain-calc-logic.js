@@ -4,13 +4,8 @@ import { isNumericAnswerCorrect, chooseSignAtCalcQuestion, correctAnswerAtCalc }
 
 function brainCalc() {
   let counter = 0;
-  let answer;
-  let number1;
-  let number2;
-  let operationCode;
-  let characterName;
+  let answer, number1, number2, operationCode, characterName, correctAnswer;
   characterName = name;
-  let correctAnswer;
   console.log("What is the result of the expression?");
   while (counter < 3) {
     operationCode = Math.round(Math.random() * 3);

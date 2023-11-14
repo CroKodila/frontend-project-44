@@ -12,12 +12,8 @@ function gcd_rec(a, b) {
 
 function brainGcd() {
   let counter = 0;
-  let answer;
-  let number1;
-  let number2;
-  let characterName;
+  let answer, number1, number2, characterName, correctAnswer;
   characterName = name;
-  let correctAnswer;
   console.log("Find the greatest common divisor of given numbers.");
   while (counter < 3) {
     number1 = Math.round(Math.random() * 100) + 1;

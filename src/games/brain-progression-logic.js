@@ -5,13 +5,9 @@ import { isNumericAnswerCorrect } from "../index.js";
 
 function brainProgression() {
   let counter = 0;
-  let answer;
+  let answer, delimiter, position,characterName, correctAnswer;
   let progression = [];
-  let delimiter;
-  let position;
-  let characterName;
   characterName = name;
-  let correctAnswer;
   console.log("What is the result of the expression?");
   while (counter < 3) {
     delimiter = Math.ceil(Math.random() * 10);
