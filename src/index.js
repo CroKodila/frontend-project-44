@@ -1,4 +1,5 @@
-import readlineSync from "readline-sync";
+import { main } from "../bin/brain-games";
+main();
 
 function isNumericAnswerCorrect(answer, counter, correctAnswer, characterName) {
   if (Number(answer) === correctAnswer) {
