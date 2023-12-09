@@ -4,6 +4,7 @@ import process from "process";
 import { isNumericAnswerCorrect } from "../index.js";
 
 function brainProgression() {
+  greeting();
   let counter = 0;
   let answer, delimiter, position, characterName, correctAnswer;
   let progression = [];
@@ -33,7 +34,7 @@ function brainProgression() {
       characterName,
     );
     if (counter === 3) {
-      console.log("Congratulations, " + characterName + "!");
+      congrats(characterName);
       break;
     }
   }

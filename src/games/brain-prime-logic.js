@@ -17,6 +17,7 @@ function isPrime(num) {
 }
 
 function brainPrime() {
+  greeting();
   let counter = 0;
   let answer, number, characterName, correctAnswer;
   characterName = name;
@@ -33,7 +34,7 @@ function brainPrime() {
       characterName,
     );
     if (counter === 3) {
-      console.log("Congratulations, " + characterName + "!");
+      congrats(characterName);
       break;
     }
   }

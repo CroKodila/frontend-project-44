@@ -3,6 +3,7 @@ import readlineSync from "readline-sync";
 import { isNonNumericAnswerCorrect } from "../index.js";
 
 function brainEven() {
+  greeting();
   let counter = 0;
   let answer, number, characterName, correctAnswer;
   characterName = name;
@@ -22,7 +23,7 @@ function brainEven() {
       characterName,
     );
     if (counter === 3) {
-      console.log("Congratulations, " + characterName + "!");
+      congrats(characterName);
       break;
     }
   }

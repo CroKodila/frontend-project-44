@@ -4,9 +4,14 @@ import {
   isNumericAnswerCorrect,
   chooseSignAtCalcQuestion,
   correctAnswerAtCalc,
+  greeting,
+  congrats
 } from "../index.js";
 
+
+
 function brainCalc() {
+  greeting();
   let counter = 0;
   let answer, number1, number2, operationCode, characterName, correctAnswer;
   characterName = name;
@@ -36,7 +41,7 @@ function brainCalc() {
       characterName,
     );
     if (counter === 3) {
-      console.log("Congratulations, " + characterName + "!");
+      congrats(characterName);
       break;
     }
   }

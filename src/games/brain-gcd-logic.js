@@ -11,6 +11,7 @@ function gcd_rec(a, b) {
 }
 
 function brainGcd() {
+  greeting();
   let counter = 0;
   let answer, number1, number2, characterName, correctAnswer;
   characterName = name;
@@ -29,7 +30,7 @@ function brainGcd() {
       characterName,
     );
     if (counter === 3) {
-      console.log("Congratulations, " + characterName + "!");
+      congrats(characterName);
       break;
     }
   }
