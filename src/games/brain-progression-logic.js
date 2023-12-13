@@ -1,15 +1,14 @@
-import { name } from "../cli.js";
-import readlineSync from "readline-sync";
-import process from "process";
-import { isNumericAnswerCorrect } from "../index.js";
+import {
+  start,typeTask,askQuestion,isAnswerCorrect,congrats
+} from "../index.js";
 
 function brainProgression() {
-  greeting();
+  let characterName = start();
   let counter = 0;
-  let answer, delimiter, position, characterName, correctAnswer;
+  let answer, delimiter, position, correctAnswer, gameQuestion;
   let progression = [];
-  characterName = name;
-  console.log("What is the result of the expression?");
+  let task = "What is the result of the expression?";
+  typeTask(task);
   while (counter < 3) {
     delimiter = Math.ceil(Math.random() * 10);
     position = Math.round(Math.random() * 9);
@@ -18,21 +17,16 @@ function brainProgression() {
       progression[i] = progression[i - 1] + delimiter;
     }
     correctAnswer = progression[position];
-    process.stdout.write("Question: ");
+    gameQuestion = "Question: ";
     for (let i = 0; i < 10; i += 1) {
       if (i !== position) {
-        process.stdout.write(progression[i] + " ");
+        gameQuestion = gameQuestion + progression[i] + " ";
       } else {
-        process.stdout.write(".. ");
+        gameQuestion = gameQuestion + ".. ";
       }
     }
-    answer = readlineSync.question("\nYour answer: ");
-    counter = isNumericAnswerCorrect(
-      answer,
-      counter,
-      correctAnswer,
-      characterName,
-    );
+    answer = askQuestion(gameQuestion);
+    counter = isAnswerCorrect(answer, correctAnswer, counter, characterName);
     if (counter === 3) {
       congrats(characterName);
       break;

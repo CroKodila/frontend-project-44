@@ -1,6 +1,6 @@
-import { name } from "../cli.js";
-import readlineSync from "readline-sync";
-import { isNonNumericAnswerCorrect } from "../index.js";
+import {
+  start,typeTask,askQuestion,isAnswerCorrect,congrats
+} from "../index.js";
 
 function isPrime(num) {
   let c = 0;
@@ -17,22 +17,17 @@ function isPrime(num) {
 }
 
 function brainPrime() {
-  greeting();
+  let characterName = start();
   let counter = 0;
-  let answer, number, characterName, correctAnswer;
-  characterName = name;
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+  let answer, number, correctAnswer, gameQuestion;
+  let task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  typeTask(task);
   while (counter < 3) {
     number = Math.ceil(Math.random() * 100);
     correctAnswer = isPrime(number);
-    console.log("Question: " + number);
-    answer = readlineSync.question("Your answer: ");
-    counter = isNonNumericAnswerCorrect(
-      answer,
-      counter,
-      correctAnswer,
-      characterName,
-    );
+    gameQuestion = "Question: " + number + " ";
+    answer = askQuestion(gameQuestion);
+    counter = isAnswerCorrect(answer,correctAnswer,counter, characterName);
     if (counter === 3) {
       congrats(characterName);
       break;

@@ -1,6 +1,6 @@
-import { name } from "../cli.js";
-import readlineSync from "readline-sync";
-import { isNumericAnswerCorrect } from "../index.js";
+import {
+  start,typeTask,askQuestion,isAnswerCorrect,congrats
+} from "../index.js";
 
 function gcd_rec(a, b) {
   if (b) {
@@ -11,24 +11,19 @@ function gcd_rec(a, b) {
 }
 
 function brainGcd() {
-  greeting();
+  let characterName = start();
   let counter = 0;
-  let answer, number1, number2, characterName, correctAnswer;
-  characterName = name;
-  console.log("Find the greatest common divisor of given numbers.");
+  let answer, number1, number2, correctAnswer, gameQuestion;
+  let task = "Find the greatest common divisor of given numbers.";
+  typeTask(task);
+  
   while (counter < 3) {
     number1 = Math.round(Math.random() * 100) + 1;
     number2 = Math.round(Math.random() * 100) + 1;
-    answer = readlineSync.question(
-      "Question: " + number1 + " & " + number2 + " ",
-    );
+    gameQuestion = "Question: " + number1 + " & " + number2 + " ";
     correctAnswer = gcd_rec(number1, number2);
-    counter = isNumericAnswerCorrect(
-      answer,
-      counter,
-      correctAnswer,
-      characterName,
-    );
+    answer = askQuestion(gameQuestion);
+    counter = isAnswerCorrect(answer,correctAnswer,counter, characterName);
     if (counter === 3) {
       congrats(characterName);
       break;
