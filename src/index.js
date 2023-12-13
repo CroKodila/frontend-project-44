@@ -1,22 +1,21 @@
 import { main } from "../bin/brain-games.js";
 import readlineSync, { question } from "readline-sync";
 
-function start(){
+function start() {
   return main();
 }
-function typeTask(task){
+function typeTask(task) {
   console.log(task);
 }
-function askQuestion(question){
+function askQuestion(question) {
   let answer = readlineSync.question(question + "\nYour answer ");
   return answer;
 }
-function isAnswerCorrect(answer, correctAnswer, counter, characterName){
-  if(answer === correctAnswer.toString()){
+function isAnswerCorrect(answer, correctAnswer, counter, characterName) {
+  if (answer === correctAnswer.toString()) {
     console.log("Correct!");
-    return counter+=1;
-  }
-  else{
+    return (counter += 1);
+  } else {
     console.log(
       answer +
         " is wrong answer ;(. Correct answer was " +
@@ -28,9 +27,8 @@ function isAnswerCorrect(answer, correctAnswer, counter, characterName){
     return 4;
   }
 }
-function congrats(name){
+function congrats(name) {
   console.log("Congratulations, " + name + "!");
 }
 
-
-export {start,typeTask,askQuestion,isAnswerCorrect,congrats}
+export { start, typeTask, askQuestion, isAnswerCorrect, congrats };

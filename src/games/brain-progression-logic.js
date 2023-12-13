@@ -1,5 +1,9 @@
 import {
-  start,typeTask,askQuestion,isAnswerCorrect,congrats
+  start,
+  typeTask,
+  askQuestion,
+  isAnswerCorrect,
+  congrats,
 } from "../index.js";
 
 function brainProgression() {

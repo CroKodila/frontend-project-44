@@ -1,6 +1,9 @@
-
 import {
-  start,typeTask,askQuestion,isAnswerCorrect,congrats
+  start,
+  typeTask,
+  askQuestion,
+  isAnswerCorrect,
+  congrats,
 } from "../index.js";
 
 function brainEven() {
@@ -18,7 +21,7 @@ function brainEven() {
     } else {
       correctAnswer = "no";
     }
-    counter = isAnswerCorrect(answer,correctAnswer,counter, characterName)
+    counter = isAnswerCorrect(answer, correctAnswer, counter, characterName);
     if (counter === 3) {
       congrats(characterName);
       break;
