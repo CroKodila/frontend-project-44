@@ -1,6 +1,4 @@
-import {
-  engine
-} from "../index.js";
+import { engine } from "../index.js";
 
 function brainCalc() {
   let number1 = [];
@@ -9,27 +7,30 @@ function brainCalc() {
   let correctAnswers = [];
   let task = "What is the result of the expression?";
   let gameQuestions = [];
-  for (let i=0; i<3; i+=1){
+  for (let i = 0; i < 3; i += 1) {
     operationCode[i] = Math.round(Math.random() * 3);
     number1[i] = Math.round(Math.random() * 10);
     number2[i] = Math.round(Math.random() * 10);
     if (operationCode[i] === 1) {
       correctAnswers[i] = number1[i] + number2[i];
-      gameQuestions[i] = "Question: " +
+      gameQuestions[i] =
+        "Question: " +
         number1[i].toString() +
         " + " +
         number2[i].toString() +
-        " ";     
+        " ";
     } else if (operationCode[i] === 2) {
       correctAnswers[i] = number1[i] - number2[i];
-      gameQuestions[i] = "Question: " +
+      gameQuestions[i] =
+        "Question: " +
         number1[i].toString() +
         " - " +
         number2[i].toString() +
         " ";
     } else {
       correctAnswers[i] = number1[i] * number2[i];
-      gameQuestions[i] = "Question: " +
+      gameQuestions[i] =
+        "Question: " +
         number1[i].toString() +
         " * " +
         number2[i].toString() +
@@ -38,4 +39,4 @@ function brainCalc() {
   }
   engine(task, correctAnswers, gameQuestions);
 }
-export {brainCalc as default};
+export { brainCalc as default };
