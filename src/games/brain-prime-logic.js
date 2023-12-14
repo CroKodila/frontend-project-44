@@ -18,7 +18,7 @@ function brainPrime() {
   let number = [];
   let correctAnswers = [];
   let gameQuestions = [];
-  let task = 'Answer "yes" if given number is prime, otherwise answer "no".';
+  let task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   for (let i = 0; i < 3; i += 1) {
     number[i] = Math.ceil(Math.random() * 100);
     correctAnswers[i] = isPrime(number[i]);
