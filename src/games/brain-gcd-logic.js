@@ -4,7 +4,7 @@ function gcdRec(a, b) {
   let res;
   if (b) {
     res = gcdRec(b, a % b);
-    } else {
+  } else {
     res = Math.abs(a);
   }
   return res;
