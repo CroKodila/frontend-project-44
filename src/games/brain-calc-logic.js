@@ -22,7 +22,7 @@ export default function brainCalc() {
       correctAnswers[i] = number1[i] * number2[i];
       sign = ' * ';
     }
-    gameQuestions[i] = `Question:  ${number1[i]}${sign}${number2[i]}`;
+    gameQuestions[i] = `Question: ${number1[i]}${sign}${number2[i]}`;
   }
   engine(task, correctAnswers, gameQuestions);
 }
