@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-export default function engine(task, correctAnswers, gameQuestions) {
+function engine(task, correctAnswers, gameQuestions) {
   let counter = 0;
   let answer;
   console.log('Welcome to the Brain Games!');
@@ -21,3 +21,4 @@ export default function engine(task, correctAnswers, gameQuestions) {
     }
   }
 }
+export {engine as default};
