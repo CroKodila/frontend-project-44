@@ -1,9 +1,10 @@
-import { engine } from "../index.js";
-function brainProgression() {
+import { engine } from '../index.js';
+
+export default function brainProgression() {
   const delimiter = [];
   const position = [];
   const correctAnswers = [];
-  const task = "What number is missing in the progression?";
+  const task = 'What number is missing in the progression?';
   const gameQuestions = [];
   const progressions = [[], [], []];
   for (let i = 0; i < 3; i += 1) {
@@ -14,16 +15,14 @@ function brainProgression() {
       progressions[i][k] = progressions[i][k - 1] + delimiter[i];
     }
     correctAnswers[i] = progressions[i][position[i]];
-    gameQuestions[i] = "Question: ";
+    gameQuestions[i] = 'Question: ';
     for (let k = 0; k < 10; k += 1) {
       if (k !== position[i]) {
-        gameQuestions[i] =
-          gameQuestions[i] + progressions[i][k].toString() + " ";
+        gameQuestions[i] = `${gameQuestions[i]} ${progressions[i][k]} `;
       } else {
-        gameQuestions[i] = gameQuestions[i] + ".. ";
+        gameQuestions[i] = `${gameQuestions[i]}.. `;
       }
     }
   }
   engine(task, correctAnswers, gameQuestions);
 }
-export { brainProgression as default };

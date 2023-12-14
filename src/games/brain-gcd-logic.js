@@ -1,24 +1,25 @@
-import { engine } from "../index.js";
-function gcd_rec(a, b) {
+import { engine } from '../index.js';
+
+function gcdRec(a, b) {
   if (b) {
-    return gcd_rec(b, a % b);
-  } else {
+    return gcdRec(b, a % b);
+  } 
+  else {
     return Math.abs(a);
   }
 }
-function brainGcd() {
+export default function brainGcd() {
   const number1 = [];
   const number2 = [];
   const correctAnswers = [];
-  const task = "Find the greatest common divisor of given numbers.";
+  const task = 'Find the greatest common divisor of given numbers.';
   const gameQuestions = [];
 
   for (let i = 0; i < 3; i += 1) {
     number1[i] = Math.round(Math.random() * 100) + 1;
     number2[i] = Math.round(Math.random() * 100) + 1;
-    gameQuestions[i] = "Question: " + number1[i] + " " + number2[i] + " ";
-    correctAnswers[i] = gcd_rec(number1[i], number2[i]);
+    gameQuestions[i] = `Question: ${number1[i]} ${number2[i]} `;
+    correctAnswers[i] = gcdRec(number1[i], number2[i]);
   }
   engine(task, correctAnswers, gameQuestions);
 }
-export { brainGcd as default };
