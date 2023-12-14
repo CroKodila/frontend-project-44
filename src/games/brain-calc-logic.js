@@ -4,6 +4,7 @@ import { engine } from "../index.js";
 function brainCalc() {
   let number1 = [];
   let number2 = [];
+  let sign;
   let operationCode = [];
   let correctAnswers = [];
   let task = "What is the result of the expression?";
