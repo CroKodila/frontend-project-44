@@ -1,4 +1,4 @@
-import { engine } from '../index.js';
+import engine from '../index.js';
 
 export default function brainProgression() {
   const delimiter = [];

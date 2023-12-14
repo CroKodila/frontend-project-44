@@ -1,4 +1,4 @@
-import { engine } from '../index.js';
+import engine from '../index.js';
 
 function isPrime(num) {
   let c = 0;
