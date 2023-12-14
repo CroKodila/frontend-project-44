@@ -5,7 +5,7 @@ function brainProgression() {
 
   let position = [];
   let correctAnswers = [];
-  let task = "What is the result of the expression?";
+  let task = "What number is missing in the progression?";
   let gameQuestions = [];
   let progressions = [[], [], []];
   for (let i = 0; i < 3; i += 1) {
