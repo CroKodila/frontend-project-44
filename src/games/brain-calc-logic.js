@@ -26,4 +26,3 @@ export default function brainCalc() {
   }
   engine(task, correctAnswers, gameQuestions);
 }
-

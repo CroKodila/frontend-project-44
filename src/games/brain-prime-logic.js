@@ -2,17 +2,14 @@ import { engine } from '../index.js';
 
 function isPrime(num) {
   let c = 0;
-  for (let i = 2; i < num; i += 1) {
+  for (let i = 2; i < num; i += 1){
     if (num % i === 0) {
-      c += 1;
-    }
+      c += 1;}
   }
-  if (c === 0) {
-    return 'yes';
-  } 
+  if (c === 0){
+    return 'yes';} 
   else {
-    return 'no';
-  }
+    return 'no';}
 }
 export default function brainPrime() {
   const number = [];

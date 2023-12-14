@@ -1,12 +1,12 @@
 import { engine } from '../index.js';
 
 function gcdRec(a, b) {
-  if (b) {
-    return gcdRec(b, a % b);
-  } 
-  else {
-    return Math.abs(a);
-  }
+  let res;
+  if (b){
+    res = gcdRec(b, a % b);} 
+  else{
+    res = Math.abs(a);}
+  return res;
 }
 export default function brainGcd() {
   const number1 = [];
