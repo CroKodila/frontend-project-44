@@ -1,13 +1,11 @@
 import { engine } from "../index.js";
-
 function brainProgression() {
-  let delimiter = [];
-
-  let position = [];
-  let correctAnswers = [];
-  let task = "What number is missing in the progression?";
-  let gameQuestions = [];
-  let progressions = [[], [], []];
+  const delimiter = [];
+  const position = [];
+  const correctAnswers = [];
+  const task = "What number is missing in the progression?";
+  const gameQuestions = [];
+  const progressions = [[], [], []];
   for (let i = 0; i < 3; i += 1) {
     delimiter[i] = Math.ceil(Math.random() * 10);
     position[i] = Math.round(Math.random() * 9);

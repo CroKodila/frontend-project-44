@@ -1,5 +1,4 @@
 import { engine } from "../index.js";
-
 function isPrime(num) {
   let c = 0;
   for (let i = 2; i < num; i += 1) {
@@ -13,12 +12,11 @@ function isPrime(num) {
     return "no";
   }
 }
-
 function brainPrime() {
-  let number = [];
-  let correctAnswers = [];
-  let gameQuestions = [];
-  let task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  const number = [];
+  const correctAnswers = [];
+  const gameQuestions = [];
+  const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   for (let i = 0; i < 3; i += 1) {
     number[i] = Math.ceil(Math.random() * 100);
     correctAnswers[i] = isPrime(number[i]);

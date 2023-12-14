@@ -1,5 +1,4 @@
 import { engine } from "../index.js";
-
 function gcd_rec(a, b) {
   if (b) {
     return gcd_rec(b, a % b);
@@ -7,13 +6,12 @@ function gcd_rec(a, b) {
     return Math.abs(a);
   }
 }
-
 function brainGcd() {
-  let number1 = [];
-  let number2 = [];
-  let correctAnswers = [];
-  let task = "Find the greatest common divisor of given numbers.";
-  let gameQuestions = [];
+  const number1 = [];
+  const number2 = [];
+  const correctAnswers = [];
+  const task = "Find the greatest common divisor of given numbers.";
+  const gameQuestions = [];
 
   for (let i = 0; i < 3; i += 1) {
     number1[i] = Math.round(Math.random() * 100) + 1;
