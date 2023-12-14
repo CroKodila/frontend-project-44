@@ -2,7 +2,7 @@ import { engine } from "../index.js";
 function brainCalc() {
   const number1 = [];
   const number2 = [];
-  const sign = "";
+  let sign;
   const operationCode = [];
   const correctAnswers = [];
   const task = "What is the result of the expression?";
