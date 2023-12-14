@@ -1,9 +1,5 @@
 import {
-  start,
-  typeTask,
-  askQuestion,
-  isAnswerCorrect,
-  congrats,
+  engine
 } from "../index.js";
 
 function isPrime(num) {
@@ -21,21 +17,15 @@ function isPrime(num) {
 }
 
 function brainPrime() {
-  let characterName = start();
-  let counter = 0;
-  let answer, number, correctAnswer, gameQuestion;
-  let task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  typeTask(task);
-  while (counter < 3) {
-    number = Math.ceil(Math.random() * 100);
-    correctAnswer = isPrime(number);
-    gameQuestion = "Question: " + number + " ";
-    answer = askQuestion(gameQuestion);
-    counter = isAnswerCorrect(answer, correctAnswer, counter, characterName);
-    if (counter === 3) {
-      congrats(characterName);
-      break;
-    }
+  let number = [];
+  let correctAnswers = [];
+  let gameQuestions = [];
+  let task = 'Answer "yes" if given number is prime, otherwise answer "no".';
+  for(let i= 0; i<3;i+=1) {
+    number[i] = Math.ceil(Math.random() * 100);
+    correctAnswers[i] = isPrime(number[i]);
+    gameQuestions[i] = "Question: " + number[i] + " ";
   }
+  engine(task,correctAnswers,gameQuestions);
 }
 export { brainPrime as default };

@@ -1,34 +1,32 @@
-import { main } from "../bin/brain-games.js";
 import readlineSync, { question } from "readline-sync";
 
-function start() {
-  return main();
-}
-function typeTask(task) {
+function engine(task, correctAnswers, gameQuestions){
+  let counter = 0;
+  let answer, characterName;
+  console.log("Welcome to the Brain Games!");
+  characterName = readlineSync.question("May I have your name? ");
+  console.log("Hello, " + characterName + "!");
   console.log(task);
-}
-function askQuestion(question) {
-  let answer = readlineSync.question(question + "\nYour answer ");
-  return answer;
-}
-function isAnswerCorrect(answer, correctAnswer, counter, characterName) {
-  if (answer === correctAnswer.toString()) {
-    console.log("Correct!");
-    return (counter += 1);
-  } else {
-    console.log(
-      answer +
-        " is wrong answer ;(. Correct answer was " +
-        correctAnswer +
-        ". Let's try again, " +
-        characterName +
-        "!",
-    );
-    return 4;
+  while (counter < 3){
+    answer = readlineSync.question(gameQuestions[counter] + "\nYour answer ");
+    if (answer === correctAnswers[counter].toString()) {
+          console.log("Correct!");
+          counter += 1;
+        } else {
+          console.log(
+            answer +
+              " is wrong answer ;(. Correct answer was " +
+              correctAnswers[counter] +
+              ". Let's try again, " +
+              characterName +
+              "!",
+          );
+          counter = 4;
+        }
+      if (counter === 3){
+        console.log("Congratulations, " + characterName + "!");
+      }
   }
 }
-function congrats(name) {
-  console.log("Congratulations, " + name + "!");
-}
+export {engine};
 
-export { start, typeTask, askQuestion, isAnswerCorrect, congrats };

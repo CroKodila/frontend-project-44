@@ -1,9 +1,5 @@
 import {
-  start,
-  typeTask,
-  askQuestion,
-  isAnswerCorrect,
-  congrats,
+  engine
 } from "../index.js";
 
 function gcd_rec(a, b) {
@@ -15,23 +11,19 @@ function gcd_rec(a, b) {
 }
 
 function brainGcd() {
-  let characterName = start();
-  let counter = 0;
-  let answer, number1, number2, correctAnswer, gameQuestion;
+  let number1 = [];
+  let number2 = [];
+  let correctAnswers = [];
   let task = "Find the greatest common divisor of given numbers.";
-  typeTask(task);
+  let gameQuestions = [];
 
-  while (counter < 3) {
-    number1 = Math.round(Math.random() * 100) + 1;
-    number2 = Math.round(Math.random() * 100) + 1;
-    gameQuestion = "Question: " + number1 + " & " + number2 + " ";
-    correctAnswer = gcd_rec(number1, number2);
-    answer = askQuestion(gameQuestion);
-    counter = isAnswerCorrect(answer, correctAnswer, counter, characterName);
-    if (counter === 3) {
-      congrats(characterName);
-      break;
-    }
+  for(let i=0; i<3;i+=1) {
+    number1[i] = Math.round(Math.random() * 100) + 1;
+    number2[i] = Math.round(Math.random() * 100) + 1;
+    gameQuestions[i] = "Question: " + number1[i] + " & " + number2[i] + " ";
+    correctAnswers[i] = gcd_rec(number1[i], number2[i]);
+    
   }
+  engine(task, correctAnswers, gameQuestions);
 }
 export { brainGcd as default };

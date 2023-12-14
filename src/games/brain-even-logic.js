@@ -1,31 +1,22 @@
 import {
-  start,
-  typeTask,
-  askQuestion,
-  isAnswerCorrect,
-  congrats,
+  engine
 } from "../index.js";
 
 function brainEven() {
-  let characterName = start();
-  let counter = 0;
-  let answer, number, correctAnswer, gameQuestion;
+  let number = [];
+  let correctAnswers = [];
   let task = 'Answer "yes" if the number is even, otherwise answer "no".';
-  typeTask(task);
-  while (counter < 3) {
-    number = Math.round(Math.random() * 100);
-    gameQuestion = "Question: " + number + " ";
-    answer = askQuestion(gameQuestion);
-    if (number % 2 === 0) {
-      correctAnswer = "yes";
+  let gameQuestions = [];
+  for (let i = 0; i<3; i+=1) {
+    number[i] = Math.round(Math.random() * 100);
+    gameQuestions[i] = "Question: " +
+        number[i].toString();
+    if (number[i] % 2 === 0) {
+      correctAnswers[i] = "yes";
     } else {
-      correctAnswer = "no";
-    }
-    counter = isAnswerCorrect(answer, correctAnswer, counter, characterName);
-    if (counter === 3) {
-      congrats(characterName);
-      break;
+      correctAnswers[i] = "no";
     }
   }
+  engine(task,correctAnswers,gameQuestions);
 }
 export { brainEven as default };
