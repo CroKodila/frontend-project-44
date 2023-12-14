@@ -18,9 +18,9 @@ export default function brainProgression() {
     gameQuestions[i] = 'Question: ';
     for (let k = 0; k < 10; k += 1) {
       if (k !== position[i]) {
-        gameQuestions[i] = `${gameQuestions[i]} ${progressions[i][k]} `;
+        gameQuestions[i] = `${gameQuestions[i]} ${progressions[i][k]}`;
       } else {
-        gameQuestions[i] = `${gameQuestions[i]}.. `;
+        gameQuestions[i] = `${gameQuestions[i]} ..`;
       }
     }
   }
