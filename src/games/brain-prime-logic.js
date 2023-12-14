@@ -10,8 +10,7 @@ function isPrime(num) {
   }
   if (c === 0) {
     res = 'yes';
-  } 
-  else {
+  } else {
     res = 'no';
   }
   return res;

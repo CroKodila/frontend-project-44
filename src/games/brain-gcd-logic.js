@@ -2,8 +2,11 @@ import engine from '../index.js';
 
 function gcdRec(a, b) {
   let res;
-  if (b) { res = gcdRec(b, a % b); } 
-  else { res = Math.abs(a); }
+  if (b) { 
+    res = gcdRec(b, a % b); 
+  } else { 
+    res = Math.abs(a); 
+  }
   return res;
 }
 export default function brainGcd() {
